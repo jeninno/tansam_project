@@ -27,7 +27,7 @@ function App() {
     />
 
     <Route
-      path="/dashoboard"
+      path="/dashboard"
       element={<Dashboard />}
     />
 
