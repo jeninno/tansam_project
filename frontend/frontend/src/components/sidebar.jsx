@@ -1,29 +1,20 @@
 import "./sidebar.css";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
+  return (
+    <div className="sidebar">
 
- return(
+  <h3>Admin Panel</h3>
 
-  <div className="sidebar">
+  <a href="/dashboard">Dashboard</a>
+  <a href="/users">Users</a>
+  <a href="/admins">Admins</a>
+  <a href="/roles">Roles</a>
+  <a href="/settings">Settings</a>
 
-   <h3>Admin Panel</h3>
-
-   <ul>
-
-    <li>Dashboard</li>
-
-    <li>Users</li>
-
-    <li>Admins</li>
-
-    <li>Settings</li>
-
-   </ul>
-
-  </div>
-
- );
-
+</div>
+  );
 }
 
 export default Sidebar;

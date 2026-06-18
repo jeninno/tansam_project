@@ -14,7 +14,7 @@ function Header() {
   <div className="header">
 
    <h2>
-    Welcome
+    Welcome!
    </h2>
 
    <h4>

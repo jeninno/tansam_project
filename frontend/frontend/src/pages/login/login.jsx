@@ -31,43 +31,66 @@ function Login() {
 
  };
 
- const handleSubmit=
- async(e)=>{
+ const handleSubmit =
+async(e)=>{
 
   e.preventDefault();
 
-  const response=
-  await fetch(
-   `${BASE_URL}/login`,
-   {
-    method:"POST",
-    headers:{
-      "Content-Type":
-      "application/json"
-    },
-    body:
-    JSON.stringify(form)
-   }
-  );
+  try{
 
-  const data=
-  await response.json();
+    const response =
+    await fetch(
+      `${BASE_URL}/login`,
+      {
+        method:"POST",
+        headers:{
+          "Content-Type":
+          "application/json"
+        },
+        body:
+        JSON.stringify(form)
+      }
+    );
 
-  localStorage.setItem(
-   "token",
-   data.token
-  );
+    const data =
+    await response.json();
 
-  localStorage.setItem(
-   "user",
-   JSON.stringify(
-    data.user
-   )
-  );
+    if(!response.ok){
 
-  navigate("/dashboard");
+      alert(
+        data.message ||
+        "Invalid email or password"
+      );
 
- };
+      return;
+
+    }
+
+    localStorage.setItem(
+      "token",
+      data.token
+    );
+
+    localStorage.setItem(
+      "user",
+      JSON.stringify(
+        data.user
+      )
+    );
+
+    navigate("/dashboard");
+
+  }
+
+  catch(error){
+
+    alert(
+      "Unable to connect to server"
+    );
+
+  }
+
+};
 
  return(
 
@@ -100,6 +123,13 @@ function Login() {
     <button>
       Login
     </button>
+
+    <p>
+ Don't have an account?
+ <a href="/">
+  Register
+ </a>
+</p>
 
     
 

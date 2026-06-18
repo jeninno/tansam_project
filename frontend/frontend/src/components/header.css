@@ -1,17 +1,36 @@
 .header {
-    height: 70px;
-    background-color: white;
-    border-bottom: 1px solid #ddd;
+    background: white;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    padding: 0 25px;
-    box-sizing: border-box;
+    padding: 20px 35px;
+
+    border-bottom: 1px solid #e2e8f0;
+
+    width: 100%;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 10;
 }
 
-.header h2,
+.header h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
 .header h4 {
-    margin: 0;
+    color: #2563eb;
+
+    background: #eff6ff;
+
+    padding: 10px 16px;
+
+    border-radius: 999px;
+
+    font-weight: 600;
 }
